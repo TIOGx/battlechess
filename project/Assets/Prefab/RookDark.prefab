@@ -680,6 +680,8 @@ GameObject:
   - component: {fileID: 3130428231563978614}
   - component: {fileID: 4264144927258715179}
   - component: {fileID: 4436233927293864945}
+  - component: {fileID: -5214290308658312216}
+  - component: {fileID: 4116242980998146257}
   m_Layer: 0
   m_Name: RookDark
   m_TagString: BlackTeam
@@ -798,6 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a2d72454c7ade4a976eb1cb07df262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Piecetype: 0
   MyEClass: 0
   TypeName: 
   Hp: 100
@@ -834,3 +837,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5214290308658312216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9087554349024309735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4116242980998146257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9087554349024309735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

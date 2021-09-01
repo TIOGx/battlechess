@@ -46,6 +46,7 @@ MonoBehaviour:
   - SelectPiece
   - StartGameRPC
   - BuildPieceRPC
+  - NextTurnRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -7,13 +7,15 @@ using UnityEngine.UI;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    public static NetworkManager instance; // singleton
     public GameObject StartGameBtn;
     PhotonView PV;
     public Text[] NicknameText;
-    public int myNum;
+    public int IDNum;
     void Start() {
         PV = photonView;
-
+        instance = this;
+        
     }
     bool master()
     {
@@ -22,9 +24,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        if(PhotonNetwork.CountOfPlayers != 2 || !master()) return;
+        if(!master()) return; // 방장만 게임 시작 버튼 누를 수 있음
         // StartGameBtn.SetActive(false);
-        PV.RPC("StartGameRPC", RpcTarget.AllViaServer);
+        PV.RPC("StartGameRPC", RpcTarget.AllViaServer);   
     }
     [PunRPC]
     void StartGameRPC()
@@ -35,7 +37,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             NicknameText[i].text = PhotonNetwork.PlayerList[i].NickName;
             if( PhotonNetwork.PlayerList[i] == PhotonNetwork.LocalPlayer){
-                myNum = i;
+                IDNum = i; // 0 : 1번째로 들어온 사람(방장) Black, 1 : 2번째로 들어온사람 White
+                if(IDNum == 0){
+                    CameraManager.instance.BlackTeamCameraOn(); // First turn is Black Turn
+                    GameManager.instance.Player = GameManager.EPlayerWho.Black;
+                    UIManager.instance.SetblackteamcostCanvas();                   
+                }
+                else{
+                    CameraManager.instance.WhiteTeamCameraOn();
+                    GameManager.instance.Player = GameManager.EPlayerWho.White;
+                    UIManager.instance.SetwhiteteamcostCanvas(); 
+                }        
             }
         }
     }

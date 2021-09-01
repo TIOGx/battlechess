@@ -23,7 +23,6 @@ public class CameraManager : MonoBehaviour
     {
         CameraMoveFlag = false;
         instance = this;
-        BlackTeamCameraOn(); // First turn is Black Turn
     }
     void Update()
     {
@@ -38,7 +37,7 @@ public class CameraManager : MonoBehaviour
     }
     IEnumerator CameraMoveCoroutine(Transform TeamOriginTransform)
     {
-        // Camera's sharedcamerapos ¼³Á¤
+        // Camera's sharedcamerapos ï¿½ï¿½ï¿½ï¿½
         while (waitTime > elapsedTime)
         {
             elapsedTime += Time.deltaTime;

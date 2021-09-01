@@ -18,6 +18,12 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private Text teamcolorCanvas;
     [SerializeField]
+    private GameObject  BuildButton;
+    [SerializeField]
+    private GameObject  AttackButton;
+    [SerializeField]
+    private GameObject  NextTurnButton;
+    [SerializeField]
     private Text blackteamcostText;
     [SerializeField]
     private Text whiteteamcostText;
@@ -27,6 +33,20 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private int whiteteamcost;
 
+    public void DeactivateButton()
+    {
+        BuildButton.GetComponent<Button>().interactable = false;
+        AttackButton.GetComponent<Button>().interactable = false;
+        NextTurnButton.GetComponent<Button>().interactable = false;
+
+    }
+    public void ActivateButton()
+    {
+        BuildButton.GetComponent<Button>().interactable = true;
+        AttackButton.GetComponent<Button>().interactable = true;
+        NextTurnButton.GetComponent<Button>().interactable = true;
+
+    }
     public void SetBlackTeamCost(int cost)
     {
         blackteamcost = cost;
@@ -103,7 +123,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         {
             interest = 5;
         }
-        blackteamcost= blackteamcost + 5 + interest;
+        blackteamcost = blackteamcost + 5 + interest;
     }
     public void WhiteTeamInterestSystem()
     {

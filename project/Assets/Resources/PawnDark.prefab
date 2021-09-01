@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: -1959204128457365454}
   - component: {fileID: -6688938024530090478}
   m_Layer: 0
-  m_Name: PawnDark 1
+  m_Name: PawnDark
   m_TagString: BlackTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

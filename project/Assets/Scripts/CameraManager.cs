@@ -35,7 +35,6 @@ public class CameraManager : MonoBehaviour
             WhiteTeamCameraOn();
         }
     }
-    // 카메라 움직임 - 재용 && 구지
     IEnumerator CameraMoveCoroutine(Transform TeamOriginTransform)
     {
         // Camera's sharedcamerapos ����
@@ -54,7 +53,7 @@ public class CameraManager : MonoBehaviour
         yield break;
     }
 
-    // 카메라 움직임 - 재용 && 구지
+
     IEnumerator InitCamCoroutine(Transform TeamOriginTransform)
     {
         while (waitTime > elapsedTime)
@@ -71,7 +70,7 @@ public class CameraManager : MonoBehaviour
         yield break;
     }
 
-    // 카메라 움직임 - 재용 && 구지
+
     public void ClickPieceCamera()
     {
 
@@ -94,7 +93,6 @@ public class CameraManager : MonoBehaviour
 
         }
     }
-    // 카메라 움직임 - 재용 && 구지
     public void InitailizeCamera()
     {
         if(CameraMoveFlag == true)

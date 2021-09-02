@@ -309,6 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Piecetype: 0
   MyEClass: 0
+  PV: {fileID: 4719714345241187788}
   TypeName: 
   Hp: 100
   nowHp: 100
@@ -344,6 +345,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 3935307562533492168}
   - {fileID: -1323665214829146182}
   - {fileID: -7307510374744550630}
   sceneViewId: 0
@@ -380,7 +382,9 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!95 &-8485277925367939479
 Animator:
   serializedVersion: 3

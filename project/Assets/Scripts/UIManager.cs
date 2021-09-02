@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 구지 && 재용
 public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하는 매니저
 {
     public static UIManager instance;

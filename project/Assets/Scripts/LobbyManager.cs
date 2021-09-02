@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 
+// 효원 작성
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     private string gameVersion = "1"; // 게임 버전

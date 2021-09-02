@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+// 효원
 public class DamageText : MonoBehaviour
 {
     public float speed; // 텍스트 이동속도

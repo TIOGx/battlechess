@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Piecetype: 0
   MyEClass: 0
+  PV: {fileID: 0}
   TypeName: 
   Hp: 100
   nowHp: 0
@@ -248,6 +249,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 4367133170231469925}
   - {fileID: -5713719427161917516}
   - {fileID: 2638834161612322459}
   sceneViewId: 0
@@ -295,7 +297,7 @@ Animator:
   m_GameObject: {fileID: 2207234393264339893}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41b0e2bb7970517459ff26e9070e7d27, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

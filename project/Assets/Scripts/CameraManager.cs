@@ -24,17 +24,6 @@ public class CameraManager : MonoBehaviour
         CameraMoveFlag = false;
         instance = this;
     }
-    void Update()
-    {
-        if (Input.GetKey("1"))
-        {
-            BlackTeamCameraOn();
-        }
-        if (Input.GetKey("2"))
-        {
-            WhiteTeamCameraOn();
-        }
-    }
     IEnumerator CameraMoveCoroutine(Transform TeamOriginTransform)
     {
         // Camera's sharedcamerapos ����

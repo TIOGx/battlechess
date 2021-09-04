@@ -9,13 +9,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public static NetworkManager instance; // singleton
     public GameObject StartGameBtn;
-    PhotonView PV;
+    public PhotonView PV;
     public Text[] NicknameText;
     public int IDNum;
-    void Start() {
+    void Start()
+    {
         PV = photonView;
         instance = this;
-        
+
     }
     bool master()
     {
@@ -24,30 +25,34 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        if(!master()) return; // 방장만 게임 시작 버튼 누를 수 있음
+        if (!master()) return; // 방장만 게임 시작 버튼 누를 수 있음
         // StartGameBtn.SetActive(false);
-        PV.RPC("StartGameRPC", RpcTarget.AllViaServer);   
+        PV.RPC("StartGameRPC", RpcTarget.AllViaServer);
     }
+
     [PunRPC]
     void StartGameRPC()
-    {   
+    {
         StartGameBtn.SetActive(false);
         print("게임시작");
-        for (int i = 0; i <2 ; i++)
+        for (int i = 0; i < 2; i++)
         {
             NicknameText[i].text = PhotonNetwork.PlayerList[i].NickName;
-            if( PhotonNetwork.PlayerList[i] == PhotonNetwork.LocalPlayer){
+            if (PhotonNetwork.PlayerList[i] == PhotonNetwork.LocalPlayer)
+            {
                 IDNum = i; // 0 : 1번째로 들어온 사람(방장) Black, 1 : 2번째로 들어온사람 White
-                if(IDNum == 0){
+                if (IDNum == 0)
+                {
                     CameraManager.instance.BlackTeamCameraOn(); // First turn is Black Turn
                     GameManager.instance.Player = GameManager.EPlayerWho.Black;
-                    UIManager.instance.SetblackteamcostCanvas();                   
+                    UIManager.instance.SetblackteamcostCanvas();
                 }
-                else{
+                else
+                {
                     CameraManager.instance.WhiteTeamCameraOn();
                     GameManager.instance.Player = GameManager.EPlayerWho.White;
-                    UIManager.instance.SetwhiteteamcostCanvas(); 
-                }        
+                    UIManager.instance.SetwhiteteamcostCanvas();
+                }
             }
         }
     }

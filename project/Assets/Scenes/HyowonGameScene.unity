@@ -4417,7 +4417,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 9
+  sceneViewId: 70
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &185392286
@@ -4572,7 +4572,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 8
+  sceneViewId: 71
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &194152380
@@ -5146,7 +5146,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 2
+  sceneViewId: 72
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &226314476
@@ -10439,7 +10439,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 3
+  sceneViewId: 73
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &662170104
@@ -13212,7 +13212,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 5
+  sceneViewId: 74
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &833908346
@@ -13652,7 +13652,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 4
+  sceneViewId: 75
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &851632506
@@ -14092,7 +14092,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 7
+  sceneViewId: 76
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &867847922
@@ -14786,7 +14786,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 6
+  sceneViewId: 77
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &897416465
@@ -36460,6 +36460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGameBtn: {fileID: 1562829801}
+  PV: {fileID: 2025143433}
   NicknameText:
   - {fileID: 875366758}
   - {fileID: 1074452265}
@@ -37922,7 +37923,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2086301962}
-  sceneViewId: 1
+  sceneViewId: 78
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!65 &2086301964

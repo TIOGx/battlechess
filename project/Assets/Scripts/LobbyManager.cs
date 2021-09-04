@@ -39,13 +39,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public void Connect()
     {
         joinButton.interactable = false;
-        if(PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected)
         {
             connectionInfoText.text = "룸에 접속 ... ";
             PhotonNetwork.LocalPlayer.NickName = NicknameInput.text;
             PhotonNetwork.JoinRandomRoom();
         }
-        
+
         else
         {
             connectionInfoText.text = "오프라인 : 마스터 서버와 연결되지 않음, 재접속 시도중 ... ";
@@ -57,7 +57,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         connectionInfoText.text = "빈 방이 없음, 새로운 방을 생성";
         PhotonNetwork.LocalPlayer.NickName = NicknameInput.text;
-        PhotonNetwork.CreateRoom("MyRoom", new RoomOptions{ MaxPlayers = 2 }, null);
+        PhotonNetwork.CreateRoom("MyRoom", new RoomOptions { MaxPlayers = 2 }, null);
     }
 
     public override void OnJoinedRoom()

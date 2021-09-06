@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: -6829029909362161478}
   - component: {fileID: 7107226692876470195}
   - component: {fileID: 3645917666967457665}
+  - component: {fileID: 359811515254143302}
   m_Layer: 0
   m_Name: KnightLight
   m_TagString: WhiteTeam
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Piecetype: 0
   MyEClass: 0
+  PV: {fileID: 0}
   TypeName: 
   Hp: 100
   nowHp: 100
@@ -267,7 +269,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 7437300899932863140}
+  - {fileID: 7107226692876470195}
+  - {fileID: 3645917666967457665}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -303,6 +308,25 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
   m_SynchronizeLayers: []
+--- !u!95 &359811515254143302
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483962410771218716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41b0e2bb7970517459ff26e9070e7d27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3944679263392708315
 GameObject:
   m_ObjectHideFlags: 0

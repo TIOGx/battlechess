@@ -279,6 +279,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 5450059867116043005}
   - {fileID: 2251469962776990388}
   - {fileID: -295872544910232403}
   sceneViewId: 0
@@ -326,7 +327,7 @@ Animator:
   m_GameObject: {fileID: 2513231961732223281}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41b0e2bb7970517459ff26e9070e7d27, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

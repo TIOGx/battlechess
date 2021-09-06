@@ -33,6 +33,9 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private int whiteteamcost;
 
+    [SerializeField]
+    private GameObject StatusPieceCanvas;
+
     public void DeactivateButton()
     {
         BuildButton.GetComponent<Button>().interactable = false;
@@ -134,6 +137,11 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         }
         whiteteamcost= whiteteamcost + 5 + interest;
     }
+    // 재용
+    public void OnStatusUI()
+    {
+        StatusPieceCanvas.SetActive(true);
+    } 
     public void Start()
     {
         instance = this;
@@ -141,8 +149,5 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         SelectPosCanvas.SetActive(false);
         blackteamcost = 0;
         whiteteamcost = 0;
-    }
-    public void Update()
-    {
     }
 }

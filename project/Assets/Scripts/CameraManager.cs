@@ -16,14 +16,12 @@ public class CameraManager : MonoBehaviour
     private Vector3 SharedCamerapos; // Detail view pos for Board 
     private Quaternion SharedCamerarot; // Detail view rot for Board
     public bool CameraMoveFlag; // throw Exceptions
-    public bool ShiftFlag;
     private float elapsedTime = 0; // Timer for Coroutine
     private const float waitTime = 0.2f; // Timer for Coroutine
 
     void Start()
     {
         CameraMoveFlag = false;
-        ShiftFlag = false;
         instance = this;
     }
     IEnumerator CameraMoveCoroutine(Transform TeamOriginTransform)
@@ -83,30 +81,14 @@ public class CameraManager : MonoBehaviour
 
         }
     }
-    // 회전은 필요 없어서. 임시 변수로 잠시 둠
-    public void LeftShiftCamera()
+    public void BuildPieceCamera()
     {
-        ShiftFlag = true;
-        if (!GameManager.instance.GetPlayer())
-        {
-            OriginCamerapos = BlackTeamC.transform.position;
-            OriginCamerarot = BlackTeamC.transform.rotation;
-            SharedCamerapos = new Vector3(6f, 6.5f, -2.5f);
-            SharedCamerarot = BlackTeamC.transform.rotation;
-            StartCoroutine(CameraMoveCoroutine(BlackTeamC.transform));
-        }
-        else
-        {
-            SharedCamerapos = new Vector3(1f, 6.5f, 9.5f);
-            SharedCamerarot = WhiteTeamC.transform.rotation;
-            OriginCamerapos = WhiteTeamC.transform.position;
-            OriginCamerarot = WhiteTeamC.transform.rotation;
-            StartCoroutine(CameraMoveCoroutine(WhiteTeamC.transform));
-
-        }
+        if (GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Build");
+        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Build");
     }
     public void InitailizeCamera()
     {
+        Debug.Log("혹시 너가..");
         if(CameraMoveFlag == true)
         {
             CameraMoveFlag = false;
@@ -114,13 +96,10 @@ public class CameraManager : MonoBehaviour
                 StartCoroutine(InitCamCoroutine(BlackTeamC.transform));
             else
                 StartCoroutine(InitCamCoroutine(WhiteTeamC.transform));
-        } else if(ShiftFlag == true)
+        } else
         {
-            ShiftFlag = false;
-            if (GameManager.instance.GetPlayer())
-                StartCoroutine(InitCamCoroutine(WhiteTeamC.transform));
-            else
-                StartCoroutine(InitCamCoroutine(BlackTeamC.transform));
+            if(GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Init");
+            else WhiteTeamC.GetComponent<Animator>().SetTrigger("Init");
         }
     }
     

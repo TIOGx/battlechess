@@ -431,6 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Piecetype: 0
   MyEClass: 0
+  PV: {fileID: 0}
   TypeName: 
   Hp: 100
   nowHp: 100

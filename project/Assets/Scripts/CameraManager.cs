@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//작성 - 재용 & 구지  수정 - 재용
 public class CameraManager : MonoBehaviour 
 {
     // Camera Move Manager
@@ -16,16 +17,15 @@ public class CameraManager : MonoBehaviour
     private Vector3 SharedCamerapos; // Detail view pos for Board 
     private Quaternion SharedCamerarot; // Detail view rot for Board
     public bool CameraMoveFlag; // throw Exceptions
-    public bool ShiftFlag;
-    private float elapsedTime = 0; // Timer for Coroutine
-    private const float waitTime = 0.2f; // Timer for Coroutine
+    // private float elapsedTime = 0; // Timer for Coroutine
+    // private const float waitTime = 0.2f; // Timer for Coroutine
 
     void Start()
     {
         CameraMoveFlag = false;
-        ShiftFlag = false;
         instance = this;
     }
+    /*
     IEnumerator CameraMoveCoroutine(Transform TeamOriginTransform)
     {
         // Camera's sharedcamerapos ����
@@ -68,14 +68,14 @@ public class CameraManager : MonoBehaviour
         {
             OriginCamerapos = BlackTeamC.transform.position;
             OriginCamerarot = BlackTeamC.transform.rotation;
-            SharedCamerapos = new Vector3(3.5f, 7.05f, 3.5f);
+            SharedCamerapos = new Vector3(5.5f, 7.5f, 3.5f);
             SharedCamerarot = Quaternion.Euler(90f, 0, 0);
             StartCoroutine(CameraMoveCoroutine(BlackTeamC.transform));
 
         }
         else
         {
-            SharedCamerapos = new Vector3(3.5f, 7.05f, 3.5f);
+            SharedCamerapos = new Vector3(1.5f, 7.5f, 3.5f);
             SharedCamerarot = Quaternion.Euler(90f, 180f, 0);
             OriginCamerapos = WhiteTeamC.transform.position;
             OriginCamerarot = WhiteTeamC.transform.rotation;
@@ -83,30 +83,21 @@ public class CameraManager : MonoBehaviour
 
         }
     }
-    // 회전은 필요 없어서. 임시 변수로 잠시 둠
-    public void LeftShiftCamera()
+    */
+    public void MovePieceCamera()
     {
-        ShiftFlag = true;
-        if (!GameManager.instance.GetPlayer())
-        {
-            OriginCamerapos = BlackTeamC.transform.position;
-            OriginCamerarot = BlackTeamC.transform.rotation;
-            SharedCamerapos = new Vector3(6f, 6.5f, -2.5f);
-            SharedCamerarot = BlackTeamC.transform.rotation;
-            StartCoroutine(CameraMoveCoroutine(BlackTeamC.transform));
-        }
-        else
-        {
-            SharedCamerapos = new Vector3(1f, 6.5f, 9.5f);
-            SharedCamerarot = WhiteTeamC.transform.rotation;
-            OriginCamerapos = WhiteTeamC.transform.position;
-            OriginCamerarot = WhiteTeamC.transform.rotation;
-            StartCoroutine(CameraMoveCoroutine(WhiteTeamC.transform));
-
-        }
+        if (GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Move");
+        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Move");
     }
-    public void InitailizeCamera()
+    public void BuildPieceCamera()
     {
+        if (GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Build");
+        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Build");
+    }
+    public void InitializeCamera()
+    {
+        /*
+        Debug.Log("혹시 너가..");
         if(CameraMoveFlag == true)
         {
             CameraMoveFlag = false;
@@ -114,14 +105,12 @@ public class CameraManager : MonoBehaviour
                 StartCoroutine(InitCamCoroutine(BlackTeamC.transform));
             else
                 StartCoroutine(InitCamCoroutine(WhiteTeamC.transform));
-        } else if(ShiftFlag == true)
+        } else
         {
-            ShiftFlag = false;
-            if (GameManager.instance.GetPlayer())
-                StartCoroutine(InitCamCoroutine(WhiteTeamC.transform));
-            else
-                StartCoroutine(InitCamCoroutine(BlackTeamC.transform));
-        }
+        */
+        if(GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Init");
+        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Init");
+        // }
     }
     
     public void BlackTeamCameraOn()

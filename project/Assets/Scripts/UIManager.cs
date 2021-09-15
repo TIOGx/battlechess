@@ -16,13 +16,20 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private GameObject ChooseClassCanvas;
     [SerializeField]
+    private GameObject ButtonPanel;
+    [SerializeField]
+    private GameObject StatusPanel;
+    [SerializeField]
+    private GameObject StartGamePanel;
+
+    [SerializeField]
     private Text teamcolorCanvas;
     [SerializeField]
-    private GameObject  BuildButton;
+    private GameObject BuildButton;
     [SerializeField]
-    private GameObject  AttackButton;
+    private GameObject AttackButton;
     [SerializeField]
-    private GameObject  NextTurnButton;
+    private GameObject NextTurnButton;
     [SerializeField]
     private Text blackteamcostText;
     [SerializeField]
@@ -32,9 +39,9 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     private int blackteamcost;
     [SerializeField]
     private int whiteteamcost;
-
     [SerializeField]
     private GameObject StatusPieceCanvas;
+
 
     public void DeactivateButton()
     {
@@ -66,6 +73,35 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         return whiteteamcost;
     }
+
+    public void ButtonPanelFalse()
+    {
+        ButtonPanel.SetActive(false);
+    }
+    public void ButtonPanelTrue()
+    {
+        ButtonPanel.SetActive(true);
+    }
+
+    public void StartGamePanelFalse()
+    {
+        StartGamePanel.SetActive(false);
+    }
+    public void StartGamePanelTrue()
+    {
+        StartGamePanel.SetActive(true);
+    }
+
+
+    public void StatusPanelFalse()
+    {
+        StatusPanel.SetActive(false);
+    }
+    public void StatusPanelTrue()
+    {
+        StatusPanel.SetActive(true);
+    }
+
 
 
 
@@ -121,8 +157,8 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     }
     public void BlackTeamInterestSystem()
     {
-        int interest = blackteamcost/10;
-        if(interest >= 5)
+        int interest = blackteamcost / 10;
+        if (interest >= 5)
         {
             interest = 5;
         }
@@ -130,18 +166,18 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     }
     public void WhiteTeamInterestSystem()
     {
-        int interest = whiteteamcost/10;
-        if(interest >= 5)
+        int interest = whiteteamcost / 10;
+        if (interest >= 5)
         {
             interest = 5;
         }
-        whiteteamcost= whiteteamcost + 5 + interest;
+        whiteteamcost = whiteteamcost + 5 + interest;
     }
     // 재용
     public void OnStatusUI()
     {
         StatusPieceCanvas.SetActive(true);
-    } 
+    }
     public void Start()
     {
         instance = this;

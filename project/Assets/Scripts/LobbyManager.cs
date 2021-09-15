@@ -63,7 +63,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         connectionInfoText.text = "Loading...";
-        PhotonNetwork.LoadLevel("jaeyong");
+        PhotonNetwork.LoadLevel("EunjiGameScene");
     }
 
     bool master()

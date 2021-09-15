@@ -10,7 +10,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public static NetworkManager instance; // singleton
     public GameObject StartGameBtn;
     public PhotonView PV;
-    public Text[] NicknameText;
+    public Text NicknameText;
     public int IDNum;
     void Start()
     {
@@ -37,18 +37,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         print("게임시작");
         for (int i = 0; i < 2; i++)
         {
-            NicknameText[i].text = PhotonNetwork.PlayerList[i].NickName;
             if (PhotonNetwork.PlayerList[i] == PhotonNetwork.LocalPlayer)
             {
                 IDNum = i; // 0 : 1번째로 들어온 사람(방장) Black, 1 : 2번째로 들어온사람 White
                 if (IDNum == 0)
                 {
+                    NicknameText.text = PhotonNetwork.PlayerList[0].NickName;
                     CameraManager.instance.BlackTeamCameraOn(); // First turn is Black Turn
                     GameManager.instance.Player = GameManager.EPlayerWho.Black;
                     UIManager.instance.SetblackteamcostCanvas();
                 }
                 else
                 {
+                    NicknameText.text = PhotonNetwork.PlayerList[1].NickName;
                     CameraManager.instance.WhiteTeamCameraOn();
                     GameManager.instance.Player = GameManager.EPlayerWho.White;
                     UIManager.instance.SetwhiteteamcostCanvas();

@@ -36,6 +36,14 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     private Text whiteteamcostText;
 
     [SerializeField]
+    private Text Type;
+    [SerializeField]
+    private Text Class;
+    [SerializeField]
+    private Text HP;
+    [SerializeField]
+    private Text Power;
+    [SerializeField]
     private int blackteamcost;
     [SerializeField]
     private int whiteteamcost;
@@ -172,6 +180,22 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
             interest = 5;
         }
         whiteteamcost = whiteteamcost + 5 + interest;
+    }
+    public void SetHPText(string nowHP)
+    {
+        HP.text = nowHP;
+    }
+    public void SetPowerText(string nowPower)
+    {
+        Power.text = nowPower;
+    }
+    public void SetTypeText(string nowType)
+    {
+        Type.text = nowType;
+    }
+    public void SetClassText(string nowClass)
+    {
+        Class.text = nowClass;
     }
     // 재용
     public void OnStatusUI()

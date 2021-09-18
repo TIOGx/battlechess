@@ -5230,7 +5230,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226314476}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -5240,7 +5240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -960, y: 344}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &227514844
@@ -7327,7 +7327,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.32895035, g: 0.764151, b: 0.3135903, a: 1}
     m_PressedColor: {r: 0.33333334, g: 0.76470596, b: 0.3137255, a: 1}
     m_SelectedColor: {r: 0.33333334, g: 0.76470596, b: 0.3137255, a: 1}
-    m_DisabledColor: {r: 0.33333334, g: 0.76470596, b: 0.3137255, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -9287,9 +9287,13 @@ MonoBehaviour:
   NextTurnButton: {fileID: 1062584479}
   blackteamcostText: {fileID: 1026249415}
   whiteteamcostText: {fileID: 1026249415}
+  Type: {fileID: 840233878}
+  Class: {fileID: 1718019715}
+  HP: {fileID: 1176118463}
+  Power: {fileID: 1102889262}
   blackteamcost: 0
   whiteteamcost: 0
-  StatusPieceCanvas: {fileID: 0}
+  StatusPieceCanvas: {fileID: 1086629110}
 --- !u!114 &535985276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10969,7 +10973,7 @@ MonoBehaviour:
   knightz: fffffffffefffffffeffffffffffffff01000000020000000200000001000000
   originx: 0
   originz: 0
-  moveflag: 0
+  MoveObject: {fileID: 0}
 --- !u!4 &668143100
 Transform:
   m_ObjectHideFlags: 0
@@ -18292,7 +18296,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.15018693, g: 0.35136425, b: 0.7075472, a: 1}
     m_PressedColor: {r: 0.14509805, g: 0.3529412, b: 0.7058824, a: 1}
     m_SelectedColor: {r: 0.14509805, g: 0.3529412, b: 0.7058824, a: 1}
-    m_DisabledColor: {r: 0.14509805, g: 0.3529412, b: 0.7058824, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -40934,10 +40938,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
-    m_HighlightedColor: {r: 0.9622642, g: 0.8923546, b: 0.48567107, a: 1}
-    m_PressedColor: {r: 0.9607844, g: 0.8941177, b: 0.48627454, a: 1}
-    m_SelectedColor: {r: 0.9607844, g: 0.8941177, b: 0.48627454, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 0.8595041, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0.8595041, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.8595041, b: 0, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -40956,9 +40960,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1174874197}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NextTurn
+      - m_Target: {fileID: 668143099}
+        m_TargetAssemblyTypeName: MoveManager, Assembly-CSharp
+        m_MethodName: OnClickMove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

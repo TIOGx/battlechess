@@ -811,6 +811,7 @@ MonoBehaviour:
   Dir: 0
   Attackable: 0
   Movable: 0
+  MoveFlag: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
   Lightning: {fileID: 7248175018392972734, guid: 58145899ab324488e968c048c9161da4, type: 3}

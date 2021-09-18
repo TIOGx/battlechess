@@ -1,6 +1,20 @@
 ## 0918
 
-### 버그 Fix or 수정 내역
+## 주요 내용
+
+**Move 버튼 OnClick Method 적용 완료**
+
+시나리오
+
+1. 기물을 Click
+2. Move Button을 Click 
+3. 그 기물이 Movable인지 확인
+4. 갈 수 있는 Tile들 Highlight 해줌
+5. 이동 가능!
+
+**UI 아래의 오브젝트 Ray 불가능하게 적용 완료**
+
+### 수정 세부 내역
 
 - [x] Move만을 위한 Ray였던 것을 상태정보 보게 변경 (MoveObject, SelectedObject 추가)
 - [x] Move 버튼에 OnClickMove함수 할당

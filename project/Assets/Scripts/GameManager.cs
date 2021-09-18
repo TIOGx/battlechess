@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-
+public enum EPlayerWho
+{
+    Black = 0,
+    White = 1
+}
 public class GameManager : MonoBehaviourPunCallbacks
 {
 
@@ -14,19 +18,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject[,] Board;
     [SerializeField]
     private GameObject[,] Tiles;
-    public EPlayerWho Player; // id¿¡ µû¶ó °áÁ¤´ï
+    public EPlayerWho Player; // idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     [SerializeField]
     private GameObject enemy;
-    public EPlayerWho NowPlayer; // ÅÏ °áÁ¤
+    public EPlayerWho NowPlayer; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    public Queue<GameObject> BlackTeamPiece; // ³»°¡ ¼ÒÈ¯ÇÑ ¸»µé
+    public Queue<GameObject> BlackTeamPiece; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public Queue<GameObject> WhiteTeamPiece;
 
-    public enum EPlayerWho
-    {
-        Black = 0,
-        White = 1
-    }
+
     public void SetBoard(GameObject GObject, int idxX, int idxY)
     {
         if (GObject != null)
@@ -81,8 +81,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     [PunRPC]
     */
-    // ÀÌµ¿ÇÑ ÈÄ, »ý¼ºÇÑ ÈÄ Tile animation°ú ÀÌµ¿ ºÒ°¡»óÅÂ·Î ÃÊ±âÈ­ - Àç¿ë
-    // ÇöÀç´Â SelectTile()µµ ÃÊ±âÈ­ÇØÁÖ°í ÀÖÀ½
+    // ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Tile animationï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½Â·ï¿½ ï¿½Ê±ï¿½È­ - ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ SelectTile()ï¿½ï¿½ ï¿½Ê±ï¿½È­ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void InitializeTile()
     {
         for (int i = 0; i < 8; i++)
@@ -100,8 +100,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         BuildManager.instance.InitializeSelectTile();
     }
-    // °¥ ¼ö ÀÖ´Â Å¸ÀÏ¸¸ MovableÀ» true·Î µÎ°í animation È°¼ºÈ­ - Àç¿ë
-    public void HighlightTile(GameObject GObject) // °¥ ¼ö ÀÖ´Â Å¸ÀÏ highlight
+    // ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ Å¸ï¿½Ï¸ï¿½ Movableï¿½ï¿½ trueï¿½ï¿½ ï¿½Î°ï¿½ animation È°ï¿½ï¿½È­ - ï¿½ï¿½ï¿½
+    public void HighlightTile(GameObject GObject) // ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ Å¸ï¿½ï¿½ highlight
     {
         GObject.GetComponent<Tile>().SetMovable(true);
         for (int i = 0; i < GObject.transform.childCount; i++)
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         GObject.GetComponent<Animator>().Play("TileAnim");
     }
 
-    // ÀüÅõ ÆäÀÌÁî ´ã´ç ÇÔ¼ö - È¿¿ø
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ - È¿ï¿½ï¿½
     private void BattlePhase()
     {
         if (NowPlayer == EPlayerWho.Black)
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         }
     }
-    // ÇöÀç ÇÃ·¹ÀÌ¾î´Â ´©±¸? - È¿¿ø
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½? - È¿ï¿½ï¿½
     public bool GetPlayer()
     {
         if (EPlayerWho.Black == NowPlayer)
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             return false;
         }
     }
-    // ÅÏ¿¡ ÇØ´çÇÏ´Â ÇÃ·¹ÀÌ¾î¸¸ ÀÌµ¿°ú °ø°ÝÀ» ÃÊ±âÈ­ - È¿¿ø
+    // ï¿½Ï¿ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¸ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ - È¿ï¿½ï¿½
     private void InitializeActive()
     {
         foreach (GameObject el in BlackTeamPiece)
@@ -170,23 +170,23 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
         }
     }
-    // ÅÏ RPC È¿¿ø
+    // ï¿½ï¿½ RPC È¿ï¿½ï¿½
     public void NextTurn()
     {
         InitializeTile();
-        Debug.Log("ÀÌ¹øÅÏ " + NowPlayer);
+        Debug.Log("ï¿½Ì¹ï¿½ï¿½ï¿½ " + NowPlayer);
         photonView.RPC("NextTurnRPC", RpcTarget.AllViaServer, NowPlayer);
     }
-    // ÅÏ Á¾·á ÆäÀÌÁî ´ã´ç ÇÔ¼ö - È¿¿ø
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ - È¿ï¿½ï¿½
     [PunRPC]
     private void NextTurnRPC(EPlayerWho ThisTurn)
     {
         // CameraManager.instance.InitailizeCamera();
         // GameManager.instance.InitializeTile();
         // GameManager.instance.InitializeActive();
-        // Debug.Log("ÅÏÁ¾·á ´ÙÀ½ÅÏ ½ÃÀÛ");
+        // Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         // Debug.Log(Player);
-        if (NowPlayer == Player) // ÀÚ½Å ÅÏ¿¡ ÅÏÁ¾·á¸¦ ´­·¶À» ¶§
+        if (NowPlayer == Player) // ï¿½Ú½ï¿½ ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½á¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         {
             if (NowPlayer == EPlayerWho.Black)
             {
@@ -216,8 +216,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             UIManager.instance.DeactivateButton();
         }
         else
-        { // ÀÚ½Å ÅÏÀÌ ¾Æ´Ñµ¥ ÅÏÁ¾·á°¡ ´­¸± °æ¿ì
-            // ¹öÆ° È°¼ºÈ­
+        { // ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ñµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½á°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            // ï¿½ï¿½Æ° È°ï¿½ï¿½È­
             UIManager.instance.ActivateButton();
         }
 

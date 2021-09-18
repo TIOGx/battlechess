@@ -44,14 +44,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 {
                     NicknameText.text = PhotonNetwork.PlayerList[0].NickName;
                     CameraManager.instance.BlackTeamCameraOn(); // First turn is Black Turn
-                    GameManager.instance.Player = GameManager.EPlayerWho.Black;
+                    GameManager.instance.Player = EPlayerWho.Black;
                     UIManager.instance.SetblackteamcostCanvas();
                 }
                 else
                 {
                     NicknameText.text = PhotonNetwork.PlayerList[1].NickName;
                     CameraManager.instance.WhiteTeamCameraOn();
-                    GameManager.instance.Player = GameManager.EPlayerWho.White;
+                    GameManager.instance.Player = EPlayerWho.White;
                     UIManager.instance.SetwhiteteamcostCanvas();
                 }
             }

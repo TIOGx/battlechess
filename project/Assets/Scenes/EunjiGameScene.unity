@@ -10970,6 +10970,7 @@ MonoBehaviour:
   originx: 0
   originz: 0
   moveflag: 0
+  selectedObject: {fileID: 0}
 --- !u!4 &668143100
 Transform:
   m_ObjectHideFlags: 0
@@ -13880,7 +13881,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -15093,7 +15094,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -18583,6 +18584,7 @@ RectTransform:
   - {fileID: 828379865}
   - {fileID: 738045174}
   - {fileID: 1176118462}
+  - {fileID: 2086301962}
   - {fileID: 1801979891}
   - {fileID: 840233877}
   - {fileID: 1432159321}
@@ -19154,7 +19156,7 @@ GameObject:
   - component: {fileID: 1102363877}
   - component: {fileID: 1102363876}
   m_Layer: 5
-  m_Name: rightButton (1)
+  m_Name: upButton
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19173,7 +19175,7 @@ RectTransform:
   m_Children:
   - {fileID: 1207086295}
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -19224,10 +19226,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 871848831}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: SelectClass
-        m_Mode: 1
+      - m_Target: {fileID: 668143099}
+        m_TargetAssemblyTypeName: MoveManager, Assembly-CSharp
+        m_MethodName: turnSelectedPiece
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19304,7 +19306,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -20740,7 +20742,7 @@ GameObject:
   - component: {fileID: 1176118464}
   - component: {fileID: 1176118463}
   m_Layer: 5
-  m_Name: Hp
+  m_Name: MaxHp
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20762,7 +20764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 100, y: -10}
+  m_AnchoredPosition: {x: 120.8, y: -10}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1176118463
@@ -20798,7 +20800,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 / 100
+  m_Text: / 100
 --- !u!222 &1176118464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21408,7 +21410,7 @@ RectTransform:
   m_Children:
   - {fileID: 346965101}
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -21459,14 +21461,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 871848831}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: SelectClass
-        m_Mode: 1
+      - m_Target: {fileID: 668143099}
+        m_TargetAssemblyTypeName: MoveManager, Assembly-CSharp
+        m_MethodName: turnSelectedPiece
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21867,7 +21869,7 @@ GameObject:
   - component: {fileID: 1233245660}
   - component: {fileID: 1233245659}
   m_Layer: 5
-  m_Name: rightButton (3)
+  m_Name: leftButton
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21886,7 +21888,7 @@ RectTransform:
   m_Children:
   - {fileID: 167690532}
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -21937,14 +21939,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 871848831}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: SelectClass
-        m_Mode: 1
+      - m_Target: {fileID: 668143099}
+        m_TargetAssemblyTypeName: MoveManager, Assembly-CSharp
+        m_MethodName: turnSelectedPiece
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25057,7 +25059,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -25766,7 +25768,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -32118,7 +32120,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -33207,7 +33209,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -38614,7 +38616,7 @@ GameObject:
   - component: {fileID: 2033845644}
   - component: {fileID: 2033845643}
   m_Layer: 5
-  m_Name: rightButton (2)
+  m_Name: downButton
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38633,7 +38635,7 @@ RectTransform:
   m_Children:
   - {fileID: 1981928864}
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -38684,14 +38686,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 871848831}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: SelectClass
-        m_Mode: 1
+      - m_Target: {fileID: 668143099}
+        m_TargetAssemblyTypeName: MoveManager, Assembly-CSharp
+        m_MethodName: turnSelectedPiece
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38954,7 +38956,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1086629111}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -39943,6 +39945,85 @@ MonoBehaviour:
   sceneViewId: 55
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!1 &2086301961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086301962}
+  - component: {fileID: 2086301964}
+  - component: {fileID: 2086301963}
+  m_Layer: 5
+  m_Name: NowHp
+  m_TagString: UI
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2086301962
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086301961}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1086629111}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 100, y: -10}
+  m_SizeDelta: {x: 100, y: 30}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &2086301963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086301961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8490566, g: 0.46858314, b: 0.46858314, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7fc8fa24f8ab745319ab5352ae5bd277, type: 3}
+    m_FontSize: 6
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 89
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &2086301964
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086301961}
+  m_CullTransparentMesh: 1
 --- !u!1 &2088064598
 GameObject:
   m_ObjectHideFlags: 0

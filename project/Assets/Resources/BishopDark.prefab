@@ -314,7 +314,6 @@ MonoBehaviour:
   Hp: 100
   nowHp: 100
   OffensePower: 10
-  Dir: 0
   Attackable: 0
   Movable: 0
   MoveFlag: 0

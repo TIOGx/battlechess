@@ -439,6 +439,7 @@ MonoBehaviour:
   Dir: 0
   Attackable: 0
   Movable: 0
+  MoveFlag: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
   Lightning: {fileID: 7248175018392972734, guid: 58145899ab324488e968c048c9161da4, type: 3}
@@ -485,7 +486,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1404992103697889865}
+  - {fileID: -8296694987548863297}
+  - {fileID: -6739111026147182699}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -520,7 +524,9 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &5271855338483360960
 GameObject:
   m_ObjectHideFlags: 0

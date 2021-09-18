@@ -173,6 +173,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     // �� RPC ȿ��
     public void NextTurn()
     {
+        UIManager.instance.InitializeUI();
+        CameraManager.instance.InitializeCamera();
         InitializeTile();
         Debug.Log("�̹��� " + NowPlayer);
         photonView.RPC("NextTurnRPC", RpcTarget.AllViaServer, NowPlayer);

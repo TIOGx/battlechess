@@ -12,10 +12,6 @@ public class CameraManager : MonoBehaviour
     private GameObject BlackTeamC; // BlackTeamCamera Outlet Connect
     [SerializeField]
     private GameObject WhiteTeamC; // WhiteTeamCamera Outlet Connect
-    private Vector3 OriginCamerapos; // Black Turn Black pos, White Turn white pos
-    private Quaternion OriginCamerarot; // Black Turn Black rotation, White Turn White rotation
-    private Vector3 SharedCamerapos; // Detail view pos for Board 
-    private Quaternion SharedCamerarot; // Detail view rot for Board
     public bool CameraMoveFlag; // throw Exceptions
     // private float elapsedTime = 0; // Timer for Coroutine
     // private const float waitTime = 0.2f; // Timer for Coroutine
@@ -96,21 +92,19 @@ public class CameraManager : MonoBehaviour
     }
     public void InitializeCamera()
     {
-        /*
-        Debug.Log("혹시 너가..");
-        if(CameraMoveFlag == true)
+        Debug.Log("씨발이게 말이되냐고");
+        if (GameManager.instance.GetPlayer())
         {
-            CameraMoveFlag = false;
-            if (GameManager.instance.GetPlayer())
-                StartCoroutine(InitCamCoroutine(BlackTeamC.transform));
-            else
-                StartCoroutine(InitCamCoroutine(WhiteTeamC.transform));
-        } else
+            BlackTeamC.GetComponent<Animator>().ResetTrigger("Build");
+            BlackTeamC.GetComponent<Animator>().ResetTrigger("Move");
+            BlackTeamC.GetComponent<Animator>().SetTrigger("Init");
+        }
+        else
         {
-        */
-        if(GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Init");
-        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Init");
-        // }
+            WhiteTeamC.GetComponent<Animator>().ResetTrigger("Build");
+            WhiteTeamC.GetComponent<Animator>().ResetTrigger("Move");
+            WhiteTeamC.GetComponent<Animator>().SetTrigger("Init");
+        }
     }
     
     public void BlackTeamCameraOn()

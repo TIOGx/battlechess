@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private Text teamcolorCanvas;
     [SerializeField]
+    private GameObject MoveButton;
+    [SerializeField]
     private GameObject BuildButton;
     [SerializeField]
     private GameObject AttackButton;
@@ -45,6 +47,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
 
     public void DeactivateButton()
     {
+        MoveButton.GetComponent<Button>().interactable = false;
         BuildButton.GetComponent<Button>().interactable = false;
         AttackButton.GetComponent<Button>().interactable = false;
         NextTurnButton.GetComponent<Button>().interactable = false;
@@ -52,6 +55,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     }
     public void ActivateButton()
     {
+        MoveButton.GetComponent<Button>().interactable = true;
         BuildButton.GetComponent<Button>().interactable = true;
         AttackButton.GetComponent<Button>().interactable = true;
         NextTurnButton.GetComponent<Button>().interactable = true;
@@ -102,7 +106,12 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         StatusPanel.SetActive(true);
     }
 
-
+    public void InitializeUI()
+    {
+        ChooseCanvasFalse();
+        SelectCanvasFalse();
+        ChooseClassCanvasFalse();
+    }
 
 
     // ChoosePieceCanvas

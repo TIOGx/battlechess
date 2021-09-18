@@ -16,6 +16,8 @@
 
 ### 수정 세부 내역
 
+- [x] Move Button도 GameScene에 Outlet Connect
+- [x] 턴종료 시 Initilize Camera, UI
 - [x] Move만을 위한 Ray였던 것을 상태정보 보게 변경 (MoveObject, SelectedObject 추가)
 - [x] Move 버튼에 OnClickMove함수 할당
 - [x] Tile - OnMouseUp에 !EventSystem.current.IsPointerOverGameObject() 추가
@@ -59,4 +61,7 @@ MoveManager.cs:215
 
 ref) https://docs.unity3d.com/kr/530/ScriptReference/EventSystems.EventSystem.IsPointerOverGameObject.html
 
+# 미처 수정하지 못한 것
+
+**Camera Animation Trigger vs Bool**
 

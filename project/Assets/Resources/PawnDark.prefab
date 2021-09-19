@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264725556517025851}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.118, y: 0.971, z: -0.247}
+  m_LocalPosition: {x: -0.08, y: 0.971, z: 0.247}
   m_LocalScale: {x: 0.049999997, y: 0.05, z: 0.14999999}
   m_Children: []
   m_Father: {fileID: 5071442839220604993}
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2652853789335405008}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.08600001, y: 0.974, z: 0.24500002}
+  m_LocalPosition: {x: 0.08600001, y: 0.974, z: 0.18}
   m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.29999998}
   m_Children: []
   m_Father: {fileID: 5071442839220604993}
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 22be0144084cb8e478fc6839baf72cca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -320,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4378807869185766074}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.084, y: 0.974, z: 0.245}
+  m_LocalPosition: {x: -0.084, y: 0.974, z: 0.18}
   m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.29999998}
   m_Children: []
   m_Father: {fileID: 5071442839220604993}
@@ -353,7 +353,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 22be0144084cb8e478fc6839baf72cca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -563,8 +563,8 @@ MonoBehaviour:
   nowHp: 100
   OffensePower: 10
   Attackable: 0
-  Movable: 0
   MoveFlag: 0
+  Movable: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
   Lightning: {fileID: 7248175018392972734, guid: 58145899ab324488e968c048c9161da4, type: 3}
@@ -612,6 +612,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 1040878625122701540}
   - {fileID: -1959204128457365454}
   - {fileID: -6688938024530090478}
   sceneViewId: 0
@@ -678,7 +679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5901476129390051871}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.052, y: 0.971, z: -0.247}
+  m_LocalPosition: {x: 0.09, y: 0.971, z: 0.247}
   m_LocalScale: {x: 0.049999997, y: 0.05, z: 0.14999999}
   m_Children: []
   m_Father: {fileID: 5071442839220604993}

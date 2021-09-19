@@ -111,6 +111,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         ChooseCanvasFalse();
         SelectCanvasFalse();
         ChooseClassCanvasFalse();
+        ButtonPanelTrue();
     }
 
 

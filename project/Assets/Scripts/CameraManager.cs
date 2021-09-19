@@ -82,28 +82,44 @@ public class CameraManager : MonoBehaviour
     */
     public void MovePieceCamera()
     {
-        if (GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Move");
-        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Move");
+        if (GameManager.instance.GetPlayer()) {
+            BlackTeamC.GetComponent<Animator>().SetBool("Move", true);
+            BlackTeamC.GetComponent<Animator>().SetBool("Init", false);
+            BlackTeamC.GetComponent<Animator>().SetBool("Build", false);
+        }
+        else {
+            WhiteTeamC.GetComponent<Animator>().SetBool("Move", true);
+            WhiteTeamC.GetComponent<Animator>().SetBool("Init", false);
+            WhiteTeamC.GetComponent<Animator>().SetBool("Build", false);
+        }
     }
     public void BuildPieceCamera()
     {
-        if (GameManager.instance.GetPlayer()) BlackTeamC.GetComponent<Animator>().SetTrigger("Build");
-        else WhiteTeamC.GetComponent<Animator>().SetTrigger("Build");
+        if (GameManager.instance.GetPlayer()) {
+            BlackTeamC.GetComponent<Animator>().SetBool("Build", true);
+            BlackTeamC.GetComponent<Animator>().SetBool("Init", false);
+            BlackTeamC.GetComponent<Animator>().SetBool("Move", false);
+        }
+
+        else {
+            WhiteTeamC.GetComponent<Animator>().SetBool("Build", true);
+            WhiteTeamC.GetComponent<Animator>().SetBool("Init", false);
+            WhiteTeamC.GetComponent<Animator>().SetBool("Move", false);
+        } 
     }
     public void InitializeCamera()
     {
-        Debug.Log("씨발이게 말이되냐고");
         if (GameManager.instance.GetPlayer())
         {
-            BlackTeamC.GetComponent<Animator>().ResetTrigger("Build");
-            BlackTeamC.GetComponent<Animator>().ResetTrigger("Move");
-            BlackTeamC.GetComponent<Animator>().SetTrigger("Init");
+            BlackTeamC.GetComponent<Animator>().SetBool("Init", true);
+            BlackTeamC.GetComponent<Animator>().SetBool("Build", false);
+            BlackTeamC.GetComponent<Animator>().SetBool("Move", false);
         }
         else
         {
-            WhiteTeamC.GetComponent<Animator>().ResetTrigger("Build");
-            WhiteTeamC.GetComponent<Animator>().ResetTrigger("Move");
-            WhiteTeamC.GetComponent<Animator>().SetTrigger("Init");
+            WhiteTeamC.GetComponent<Animator>().SetBool("Init", true);
+            WhiteTeamC.GetComponent<Animator>().SetBool("Build", false);
+            WhiteTeamC.GetComponent<Animator>().SetBool("Move", false);
         }
     }
     

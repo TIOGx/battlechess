@@ -240,8 +240,8 @@ MonoBehaviour:
   nowHp: 100
   OffensePower: 10
   Attackable: 0
-  Movable: 0
   MoveFlag: 0
+  Movable: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
   Lightning: {fileID: 7248175018392972734, guid: 58145899ab324488e968c048c9161da4, type: 3}
@@ -307,7 +307,9 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!95 &359811515254143302
 Animator:
   serializedVersion: 3
@@ -588,7 +590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 22be0144084cb8e478fc6839baf72cca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -759,7 +761,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 22be0144084cb8e478fc6839baf72cca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -9,12 +9,12 @@
 
 2. 기물을 생성할 때 돈이 부족할시에도 버튼이 사라지는 버그를 해결하였습니다.
 
-> BuildPieceRPC 내의 UIManager.instance.ButtonPanelTrue(); 를 바깥으로 뺐습니다.
+> Build버튼을 누르게 되면 작동하는 BuildPieceRPC 내의 UIManager.instance.ButtonPanelTrue(); 를 바깥으로 뺐습니다.
 함수 내부에서 동작하다보니 return하는 경우 BuildPiece시 버튼이 사라지는 오류가 발생했고, return의 위치의 상관없이 정상적으로 게임이 진행되게 수정하였습니다.
 
 3. SelectedObject가 존재하지 않을 때 방향을 수정하려고 할 때 뜨는 nullReference 에러를 방지하기 위한 예외처리를 진행했습니다.
 
-> MoveManager 내의 turnSelectedPiece 메소드에 줄을 추가하였습니다.
+> 효원님이 작성하신 메소드인 MoveManager 내의 turnSelectedPiece 메소드에 줄을 추가하였습니다.
 
 4. Move가 안되는 bug를 해결했습니다. MoveManager.cs:273-274
 

@@ -9197,6 +9197,11 @@ MonoBehaviour:
   blackteamcost: 0
   whiteteamcost: 0
   StatusPieceCanvas: {fileID: 1086629110}
+  DirButton:
+  - {fileID: 1207186746}
+  - {fileID: 1102363874}
+  - {fileID: 2033845641}
+  - {fileID: 1233245657}
 --- !u!114 &535985276
 MonoBehaviour:
   m_ObjectHideFlags: 0

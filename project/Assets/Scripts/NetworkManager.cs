@@ -49,6 +49,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 }
                 else
                 {
+                    UIManager.instance.DeactivateButton();
                     NicknameText.text = PhotonNetwork.PlayerList[1].NickName;
                     CameraManager.instance.WhiteTeamCameraOn();
                     GameManager.instance.Player = EPlayerWho.White;

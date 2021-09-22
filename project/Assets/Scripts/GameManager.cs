@@ -90,7 +90,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             for (int j = 0; j < 8; j++)
             {
                 GameObject GObject = Tiles[i, j];
-                Tiles[i, j].GetComponent<Tile>().SetMovable(false);
+                GObject.GetComponent<Tile>().SetMovable(false);
+                GObject.GetComponent<Animator>().enabled = false;
                 for (int k = 0; k < 4; k++)
                 {
                     GObject.transform.GetChild(k).gameObject.SetActive(false);
@@ -108,7 +109,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             GObject.transform.GetChild(i).gameObject.SetActive(true);
         }
-        GObject.GetComponent<Animator>().Play("TileAnim");
+        GObject.GetComponent<Animator>().enabled = true;
     }
 
     // ���� ������ ��� �Լ� - ȿ��

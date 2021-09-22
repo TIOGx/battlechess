@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7065518621652715742}
   - component: {fileID: 1049198957414073824}
   - component: {fileID: -5157254837660911190}
+  - component: {fileID: 8564277371636791371}
   m_Layer: 0
   m_Name: RookLight
   m_TagString: WhiteTeam
@@ -233,6 +234,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1818360609 &8564277371636791371
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630453474625620774}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 0
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 1
 --- !u!1 &2316856567528411105
 GameObject:
   m_ObjectHideFlags: 0

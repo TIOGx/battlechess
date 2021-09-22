@@ -44,9 +44,12 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private GameObject StatusPieceCanvas;
 
+    [SerializeField]
+    private GameObject[] DirButton;
 
     public void DeactivateButton()
     {
+        DirButtonFalse();
         MoveButton.GetComponent<Button>().interactable = false;
         BuildButton.GetComponent<Button>().interactable = false;
         AttackButton.GetComponent<Button>().interactable = false;
@@ -95,7 +98,14 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         StartGamePanel.SetActive(true);
     }
-
+    public void DirButtonFalse()
+    {
+        for(int i=0;i<4;i++) DirButton[i].GetComponent<Button>().interactable = false;
+    }
+    public void DirButtonTrue()
+    {
+        for(int i=0;i<4;i++) DirButton[i].GetComponent<Button>().interactable = true;
+    }
 
     public void StatusPanelFalse()
     {
@@ -108,6 +118,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
 
     public void InitializeUI()
     {
+        DirButtonFalse();
         ChooseCanvasFalse();
         SelectCanvasFalse();
         ChooseClassCanvasFalse();

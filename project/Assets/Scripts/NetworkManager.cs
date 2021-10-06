@@ -17,6 +17,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PV = photonView;
         instance = this;
 
+        if (!master())
+        {
+            StartGameBtn.SetActive(false);
+        }
+
     }
     bool master()
     {
@@ -33,6 +38,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void StartGameRPC()
     {
+
         StartGameBtn.SetActive(false);
         print("게임시작");
         for (int i = 0; i < 2; i++)
@@ -54,8 +60,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                     CameraManager.instance.WhiteTeamCameraOn();
                     GameManager.instance.Player = EPlayerWho.White;
                     UIManager.instance.SetwhiteteamcostCanvas();
+
+
                 }
             }
         }
+        BuildManager.instance.BuildKing();
+
     }
 }

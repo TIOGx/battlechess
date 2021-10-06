@@ -16,6 +16,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        NicknameInput.characterLimit = 5;
+
         PhotonNetwork.GameVersion = gameVersion; // 접속에 필요한 게임 버전 설정
         PhotonNetwork.ConnectUsingSettings(); // 설정한 정보를 가지고 마스터 서버 접속 시도
 

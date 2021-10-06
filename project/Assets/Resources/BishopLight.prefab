@@ -215,9 +215,9 @@ MonoBehaviour:
   MyEClass: 0
   PV: {fileID: 0}
   TypeName: 
-  Hp: 100
-  nowHp: 0
-  OffensePower: 40
+  Hp: 120
+  nowHp: 120
+  OffensePower: 20
   Attackable: 0
   MoveFlag: 0
   Movable: 0
@@ -230,6 +230,7 @@ MonoBehaviour:
   hudDamageText: {fileID: 7190188332786271390, guid: 98e63fa1e16494c49bf426fbaa07f940, type: 3}
   Hudpos: {fileID: 4979316611868794925}
   HealthBar: {fileID: 7531425327203336770}
+  IntPiecetype: 0
 --- !u!114 &4367294904431370785
 MonoBehaviour:
   m_ObjectHideFlags: 0

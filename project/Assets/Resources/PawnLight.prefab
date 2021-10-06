@@ -260,6 +260,7 @@ MonoBehaviour:
   hudDamageText: {fileID: 7190188332786271390, guid: 98e63fa1e16494c49bf426fbaa07f940, type: 3}
   Hudpos: {fileID: 293538441765071265}
   HealthBar: {fileID: 8833730940349491584}
+  IntPiecetype: 0
 --- !u!114 &1768481845940306157
 MonoBehaviour:
   m_ObjectHideFlags: 0

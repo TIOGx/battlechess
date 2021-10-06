@@ -574,6 +574,7 @@ MonoBehaviour:
   hudDamageText: {fileID: 7190188332786271390, guid: 98e63fa1e16494c49bf426fbaa07f940, type: 3}
   Hudpos: {fileID: 2473508454129051446}
   HealthBar: {fileID: 7056912501969012913}
+  IntPiecetype: 0
 --- !u!95 &3460757539286249404
 Animator:
   serializedVersion: 3

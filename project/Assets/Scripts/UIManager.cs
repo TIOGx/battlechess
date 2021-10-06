@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     [SerializeField]
     private GameObject SelectPosCanvas;
     [SerializeField]
+    private GameObject LackMoneyCanvas;
+    [SerializeField]
     private GameObject ChooseClassCanvas;
     [SerializeField]
     private GameObject ButtonPanel;
@@ -41,6 +43,9 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     private int blackteamcost;
     [SerializeField]
     private int whiteteamcost;
+    [SerializeField]
+    private Text b;
+
     [SerializeField]
     private GameObject StatusPieceCanvas;
 
@@ -72,6 +77,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         return blackteamcost;
     }
+  
     public void SetWhiteTeamCost(int cost)
     {
         whiteteamcost = cost;
@@ -150,6 +156,20 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         return SelectPosCanvas;
     }
 
+    //LackMoneyCanvas
+    public void LackMoneyCanvasFalse()
+    {
+        LackMoneyCanvas.SetActive(false);
+    }
+    public void LackMoneyCanvasTrue()
+    {
+        LackMoneyCanvas.SetActive(true);
+    }
+
+    public GameObject GetLackMoneyCanvas()
+    {
+        return LackMoneyCanvas;
+    }
     //ChooseClassCanvas
     public void ChooseClassCanvasFalse()
     {
@@ -169,12 +189,12 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     //teamcolorCanvas
     public void SetblackteamcostCanvas()
     {
-        blackteamcostText.text = blackteamcost.ToString() + " Gold";
+        blackteamcostText.text = blackteamcost.ToString();
 
     }
     public void SetwhiteteamcostCanvas()
     {
-        whiteteamcostText.text = whiteteamcost.ToString() + " Gold";
+        whiteteamcostText.text = whiteteamcost.ToString();
     }
     public void BlackTeamInterestSystem()
     {

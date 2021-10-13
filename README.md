@@ -1,6 +1,4 @@
-# Simulation_Board_Game
-
-<h3 align="center">Simulation_Board_Game</h3>
+<h3 align="center">Battle_Chess_Project</h3>
 
 ## Table of Contents
 

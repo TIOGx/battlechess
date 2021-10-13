@@ -1,6 +1,4 @@
-# Simulation_Board_Game
-
-<h3 align="center">Simulation_Board_Game</h3>
+<h3 align="center">Battle_Chess_Project</h3>
 
 ## Table of Contents
 
@@ -97,32 +95,5 @@
 적 King 사살 = 승리
 ```
 
-
-## 사용자 설명서
-```
-
-```
-
-<!-- ## 게임 화면
-
-### 시작 화면
-
-### 튜토리얼 화면
-
-### 플레이 화면
- -->
-
-## 상세 기획
- 
-
-### 화면 제공 요소
-```
-
-```
-
-### 키 기능
-```
-
-```
 
 

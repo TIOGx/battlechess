@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: -5649515057714074435}
   - component: {fileID: -7499109882158259286}
   - component: {fileID: 5052108025060851508}
+  - component: {fileID: -6349823855398065579}
   m_Layer: 0
   m_Name: KnightLight 1
   m_TagString: WhiteTeam
@@ -234,12 +235,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Piecetype: 0
   MyEClass: 0
+  PV: {fileID: 0}
   TypeName: 
   Hp: 100
   nowHp: 100
   OffensePower: 10
-  Dir: 0
   Attackable: 0
+  MoveFlag: 0
   Movable: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
@@ -250,6 +252,7 @@ MonoBehaviour:
   hudDamageText: {fileID: 7190188332786271390, guid: 98e63fa1e16494c49bf426fbaa07f940, type: 3}
   Hudpos: {fileID: 5791682195645288060}
   HealthBar: {fileID: 6476193489569701261}
+  IntPiecetype: 0
 --- !u!95 &-1303898890703185399
 Animator:
   serializedVersion: 3
@@ -287,7 +290,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 7437300899932863140}
+  - {fileID: -7499109882158259286}
+  - {fileID: 5052108025060851508}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -322,7 +328,24 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!114 &-6349823855398065579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483962410771218716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3944679263392708315
 GameObject:
   m_ObjectHideFlags: 0

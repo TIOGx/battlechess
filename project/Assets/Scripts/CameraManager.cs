@@ -16,72 +16,14 @@ public class CameraManager : MonoBehaviour
     // private float elapsedTime = 0; // Timer for Coroutine
     // private const float waitTime = 0.2f; // Timer for Coroutine
 
-    void Start()
+    void Awake()
     {
         CameraMoveFlag = false;
         instance = this;
     }
-    /*
-    IEnumerator CameraMoveCoroutine(Transform TeamOriginTransform)
-    {
-        // Camera's sharedcamerapos ����
-        while (waitTime > elapsedTime)
-        {
-            elapsedTime += Time.deltaTime;
-
-            TeamOriginTransform.position = Vector3.Lerp(TeamOriginTransform.position, SharedCamerapos, 0.2f);
-            TeamOriginTransform.rotation = Quaternion.Lerp(TeamOriginTransform.rotation, SharedCamerarot, 0.2f);
-            yield return null;
-        }
-        TeamOriginTransform.position = SharedCamerapos;
-        TeamOriginTransform.rotation = SharedCamerarot;
-        elapsedTime = 0;
-        yield break;
-    }
-    
-
-    IEnumerator InitCamCoroutine(Transform TeamOriginTransform)
-    {
-        while (waitTime > elapsedTime)
-        {
-            elapsedTime += Time.deltaTime;
-            TeamOriginTransform.position = Vector3.Lerp(TeamOriginTransform.position, OriginCamerapos, 0.2f);
-            TeamOriginTransform.rotation = Quaternion.Lerp(TeamOriginTransform.rotation, OriginCamerarot, 0.2f);
-            yield return null;
-        }
-        TeamOriginTransform.position = OriginCamerapos;
-        TeamOriginTransform.rotation = OriginCamerarot;
-        elapsedTime = 0;
-        
-        yield break;
-    }
-
-
-    public void ClickPieceCamera()
-    {
-        CameraMoveFlag = true;
-        if (GameManager.instance.GetPlayer())
-        {
-            OriginCamerapos = BlackTeamC.transform.position;
-            OriginCamerarot = BlackTeamC.transform.rotation;
-            SharedCamerapos = new Vector3(5.5f, 7.5f, 3.5f);
-            SharedCamerarot = Quaternion.Euler(90f, 0, 0);
-            StartCoroutine(CameraMoveCoroutine(BlackTeamC.transform));
-
-        }
-        else
-        {
-            SharedCamerapos = new Vector3(1.5f, 7.5f, 3.5f);
-            SharedCamerarot = Quaternion.Euler(90f, 180f, 0);
-            OriginCamerapos = WhiteTeamC.transform.position;
-            OriginCamerarot = WhiteTeamC.transform.rotation;
-            StartCoroutine(CameraMoveCoroutine(WhiteTeamC.transform));
-
-        }
-    }
-    */
     public void MovePieceCamera()
     {
+        Debug.Log(GameManager.instance.GetPlayer());
         if (GameManager.instance.GetPlayer()) {
             BlackTeamC.GetComponent<Animator>().SetBool("Move", true);
             BlackTeamC.GetComponent<Animator>().SetBool("Init", false);

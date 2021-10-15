@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     public Queue<GameObject> BlackTeamPiece; // ���� ��ȯ�� ����
     public Queue<GameObject> WhiteTeamPiece;
 
-
     public void SetBoard(GameObject GObject, int idxX, int idxY)
     {
         if (GObject != null)
@@ -74,15 +73,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         UIManager.instance.SetwhiteteamcostCanvas();
         NowPlayer = EPlayerWho.Black;
     }
-    /*
-    public void InitializeTile()
-    {
-        photonView.RPC("InitializeTileRPC", RpcTarget.AllViaServer);
+    public void InitializeSetting(){
+        GameManager.instance.InitializeTile();
+        BuildManager.instance.InitializeSelectTile();
+        UIManager.instance.InitializeUI();
+        CameraManager.instance.InitializeCamera();
     }
-    [PunRPC]
-    */
-    // �̵��� ��, ������ �� Tile animation�� �̵� �Ұ����·� �ʱ�ȭ - ���
-    // ����� SelectTile()�� �ʱ�ȭ���ְ� ����
     public void InitializeTile()
     {
         for (int i = 0; i < 8; i++)

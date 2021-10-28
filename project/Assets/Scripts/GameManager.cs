@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
+
 public enum EPlayerWho
 {
     Black = 0,
@@ -22,6 +24,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject enemy;
     public EPlayerWho NowPlayer; // �� ����
+
+    public int BlackTeamPiececnt;
+
+    public int WhiteTeamPiececnt;
 
     public Queue<GameObject> BlackTeamPiece; // ���� ��ȯ�� ����
     public Queue<GameObject> WhiteTeamPiece;
@@ -67,12 +73,31 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     private void Start()
     {
+        BlackTeamPiececnt = 0;
+        WhiteTeamPiececnt = 0;
         UIManager.instance.SetBlackTeamCost(0);
         UIManager.instance.SetWhiteTeamCost(0);
         UIManager.instance.SetblackteamcostCanvas();
         UIManager.instance.SetwhiteteamcostCanvas();
         NowPlayer = EPlayerWho.Black;
     }
+
+    private void Update()
+    {
+        if (UIManager.instance.GetTabPanelStatus() && Input.GetKeyDown(KeyCode.Tab))
+        {
+            UIManager.instance.TabPanelFalse();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            UIManager.instance.ResetTabUI();
+            UIManager.instance.SetTabUI();
+            UIManager.instance.TabPanelTrue();
+        }
+    }
+
+    
     public void InitializeSetting(){
         GameManager.instance.InitializeTile();
         BuildManager.instance.InitializeSelectTile();
@@ -180,11 +205,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     private void NextTurnRPC(EPlayerWho ThisTurn)
     {
+        
         // CameraManager.instance.InitailizeCamera();
         // GameManager.instance.InitializeTile();
         // GameManager.instance.InitializeActive();
         // Debug.Log("������ ������ ����");
         // Debug.Log(Player);
+
         if (NowPlayer == Player) // �ڽ� �Ͽ� �����Ḧ ������ ��
         {
             if (NowPlayer == EPlayerWho.Black)
@@ -243,6 +270,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             UIManager.instance.SetwhiteteamcostCanvas();
         }
+        
+    }
+    public void GoToLobby()
+    {
+        SceneManager.LoadScene("EunjiLobbyScene");
     }
 
 }

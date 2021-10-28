@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     private GameObject StatusPanel;
     [SerializeField]
     private GameObject StartGamePanel;
+    [SerializeField]
+    private GameObject EndGamePanel;
+    [SerializeField]
+    private GameObject TabPanel;
 
     [SerializeField]
     private Text teamcolorCanvas;
@@ -38,55 +42,103 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     private Text blackteamcostText;
     [SerializeField]
     private Text whiteteamcostText;
+    [SerializeField]
+    private Text winTeamText;
 
     [SerializeField]
     private int blackteamcost;
     [SerializeField]
     private int whiteteamcost;
-    [SerializeField]
-    private Text b;
 
     [SerializeField]
     private GameObject StatusPieceCanvas;
-
     [SerializeField]
     private GameObject[] DirButton;
 
-    public void DeactivateButton()
-    {
-        DirButtonFalse();
-        MoveButton.GetComponent<Button>().interactable = false;
-        BuildButton.GetComponent<Button>().interactable = false;
-        AttackButton.GetComponent<Button>().interactable = false;
-        NextTurnButton.GetComponent<Button>().interactable = false;
 
-    }
-    public void ActivateButton()
-    {
-        MoveButton.GetComponent<Button>().interactable = true;
-        BuildButton.GetComponent<Button>().interactable = true;
-        AttackButton.GetComponent<Button>().interactable = true;
-        NextTurnButton.GetComponent<Button>().interactable = true;
+    [SerializeField]
+    private ScrollRect scrollRect;
+    [SerializeField]
+    private GameObject TabPrefab;
+    [SerializeField]
+    private Sprite[] PieceImage;
 
-    }
-    public void SetBlackTeamCost(int cost)
+
+    public void ResetTabUI()
     {
-        blackteamcost = cost;
+        Debug.Log("resetui 실행");
+        for (int i = 0; i < scrollRect.content.childCount; i++)
+        {
+            if (scrollRect.content.GetChild(i) == null) { continue; }
+            Debug.Log("content안에 들어잇는것" + scrollRect.content.GetChild(i));
+            Destroy(scrollRect.content.GetChild(i).gameObject);
+        }
+       
     }
-    public int GetBlackTeamCost()
+    //Tab UI 갱신
+    public void SetTabUI()
     {
-        return blackteamcost;
-    }
-  
-    public void SetWhiteTeamCost(int cost)
-    {
-        whiteteamcost = cost;
-    }
-    public int GetWhiteTeamCost()
-    {
-        return whiteteamcost;
+        //scrollRect = GameObject.Find("Scroll View").GetComponent<ScrollRect>();
+        int i = 0;
+        
+        if (GameManager.instance.GetPlayer()) // blackteampiece
+        {
+            foreach (GameObject el in GameManager.instance.BlackTeamPiece)
+            {       
+                if (el == null){continue;}
+                else
+                {
+                    GameObject NewPanel = Instantiate(TabPrefab) as GameObject;
+                    NewPanel.name = "Panel"+ i.ToString();
+                    NewPanel.transform.SetParent( scrollRect.content);
+
+                    NewPanel.transform.Find("PieceImage").GetComponent<Image>().sprite = PieceImage[(int)el.GetComponent<PieceController>().Piecetype + 6];
+                    NewPanel.transform.Find("MaxHp").GetComponent<Text>().text = " / " + el.GetComponent<PieceController>().Hp.ToString();
+                    NewPanel.transform.Find("NowHp").GetComponent<Text>().text = el.GetComponent<PieceController>().nowHp.ToString();
+                    NewPanel.transform.Find("Type").GetComponent<Text>().text = el.GetComponent<PieceController>().TypeName.ToString();
+                    NewPanel.transform.Find("Class").GetComponent<Text>().text = el.GetComponent<PieceController>().MyEClass.ToString();
+                    NewPanel.transform.Find("Power").GetComponent<Text>().text = el.GetComponent<PieceController>().OffensePower.ToString();
+
+                    i += 1;
+                }
+            }
+        }
+        else // whiteteampiece
+        {
+            foreach (GameObject el in GameManager.instance.WhiteTeamPiece)
+            {
+                if (el == null) { continue; }
+                else
+                {
+                    GameObject NewPanel = Instantiate(TabPrefab) as GameObject;
+                    NewPanel.name = "Panel" + i.ToString();
+                    NewPanel.transform.SetParent(scrollRect.content);
+
+                    NewPanel.transform.Find("PieceImage").GetComponent<Image>().sprite = PieceImage[(int)el.GetComponent<PieceController>().Piecetype];
+                    NewPanel.transform.Find("MaxHp").GetComponent<Text>().text = " / " + el.GetComponent<PieceController>().Hp.ToString();
+                    NewPanel.transform.Find("NowHp").GetComponent<Text>().text = el.GetComponent<PieceController>().nowHp.ToString();
+                    NewPanel.transform.Find("Type").GetComponent<Text>().text = el.GetComponent<PieceController>().TypeName.ToString();
+                    NewPanel.transform.Find("Class").GetComponent<Text>().text = el.GetComponent<PieceController>().MyEClass.ToString();
+                    NewPanel.transform.Find("Power").GetComponent<Text>().text = el.GetComponent<PieceController>().OffensePower.ToString();
+
+                    i += 1;
+                }
+            }
+        }
     }
 
+    //Canvas SetActive를 관리하는 함수
+    public void ActiveFalse(GameObject gameobject)
+    {
+        gameobject.SetActive(false);
+    }
+    public void ActiveTrue(GameObject gameobject)
+    {
+        gameobject.SetActive(true);
+    }
+
+
+    // ButtonPanel
     public void ButtonPanelFalse()
     {
         ButtonPanel.SetActive(false);
@@ -95,7 +147,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         ButtonPanel.SetActive(true);
     }
-
+    // StartGamePanel
     public void StartGamePanelFalse()
     {
         StartGamePanel.SetActive(false);
@@ -104,15 +156,17 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         StartGamePanel.SetActive(true);
     }
-    public void DirButtonFalse()
+    // EndGamePanel
+    public void EndGamePanelFalse()
     {
-        for(int i=0;i<4;i++) DirButton[i].GetComponent<Button>().interactable = false;
+        EndGamePanel.SetActive(false);
     }
-    public void DirButtonTrue()
+    public void EndGamePanelTrue()
     {
-        for(int i=0;i<4;i++) DirButton[i].GetComponent<Button>().interactable = true;
+        EndGamePanel.SetActive(true);
     }
 
+    //StatusPanel
     public void StatusPanelFalse()
     {
         StatusPanel.SetActive(false);
@@ -121,14 +175,19 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         StatusPanel.SetActive(true);
     }
-
-    public void InitializeUI()
+    //TabPanel
+    public void TabPanelFalse()
     {
-        DirButtonFalse();
-        ChooseCanvasFalse();
-        SelectCanvasFalse();
-        ChooseClassCanvasFalse();
-        ButtonPanelTrue();
+        TabPanel.SetActive(false);
+    }
+    public void TabPanelTrue()
+    {
+        TabPanel.SetActive(true);
+    }
+    public bool GetTabPanelStatus()
+    {
+        if (TabPanel.activeSelf == true) { return true; }
+        else return false;
     }
 
 
@@ -155,7 +214,7 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         return SelectPosCanvas;
     }
-
+     
     //LackMoneyCanvas
     public void LackMoneyCanvasFalse()
     {
@@ -219,6 +278,69 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
     {
         StatusPieceCanvas.SetActive(true);
     }
+
+    // button
+    public void DirButtonFalse()
+    {
+        for (int i = 0; i < 4; i++) DirButton[i].GetComponent<Button>().interactable = false;
+    }
+    public void DirButtonTrue()
+    {
+        for (int i = 0; i < 4; i++) DirButton[i].GetComponent<Button>().interactable = true;
+    }
+
+    public void DeactivateButton()
+    {
+        DirButtonFalse();
+        MoveButton.GetComponent<Button>().interactable = false;
+        BuildButton.GetComponent<Button>().interactable = false;
+        AttackButton.GetComponent<Button>().interactable = false;
+        NextTurnButton.GetComponent<Button>().interactable = false;
+
+    }
+    public void ActivateButton()
+    {
+        MoveButton.GetComponent<Button>().interactable = true;
+        BuildButton.GetComponent<Button>().interactable = true;
+        AttackButton.GetComponent<Button>().interactable = true;
+        NextTurnButton.GetComponent<Button>().interactable = true;
+
+    }
+
+    // cost
+    public void SetBlackTeamCost(int cost)
+    {
+        blackteamcost = cost;
+    }
+    public int GetBlackTeamCost()
+    {
+        return blackteamcost;
+    }
+
+    public void SetWhiteTeamCost(int cost)
+    {
+        whiteteamcost = cost;
+    }
+    public int GetWhiteTeamCost()
+    {
+        return whiteteamcost;
+    }
+
+    public Text GetwinTeamText()
+    {
+        return winTeamText;
+    }
+
+    public void InitializeUI()
+    {
+        DirButtonFalse();
+        ChooseCanvasFalse();
+        SelectCanvasFalse();
+        ChooseClassCanvasFalse();
+        ButtonPanelTrue();
+    }
+
+
     public void Start()
     {
         instance = this;
@@ -227,4 +349,5 @@ public class UIManager : MonoBehaviour // 게임에 사용된 UI들을 관리하
         blackteamcost = 0;
         whiteteamcost = 0;
     }
+
 }

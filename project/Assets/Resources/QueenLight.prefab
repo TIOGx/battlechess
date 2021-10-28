@@ -441,8 +441,8 @@ MonoBehaviour:
   Movable: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
-  Lightning: {fileID: 7248175018392972734, guid: 58145899ab324488e968c048c9161da4, type: 3}
-  SpawnedLightning: {fileID: 0}
+  Explosion: {fileID: 178910, guid: a49bcc4cec4464d2a9747ac1564ef4e7, type: 3}
+  SpawnedExplosion: {fileID: 0}
   dx: 000000000100000000000000ffffffff0100000001000000ffffffffffffffff
   dz: 0100000000000000ffffffff0000000001000000ffffffff01000000ffffffff
   hudDamageText: {fileID: 7190188332786271390, guid: 98e63fa1e16494c49bf426fbaa07f940, type: 3}
@@ -562,7 +562,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.004999995, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1877693161198877278
 CanvasRenderer:
@@ -592,8 +592,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 3
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -637,7 +637,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.004999995, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5820879401626718234
 CanvasRenderer:
@@ -667,8 +667,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 3
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0

@@ -562,8 +562,8 @@ MonoBehaviour:
   Movable: 0
   Arrow: {fileID: 5997305959101033549, guid: 5959a1e6fb41bde44992e47f1244ef03, type: 3}
   SpawnedArrow: {fileID: 0}
-  Lightning: {fileID: 7248175018392972734, guid: 58145899ab324488e968c048c9161da4, type: 3}
-  SpawnedLightning: {fileID: 0}
+  Explosion: {fileID: 178910, guid: a49bcc4cec4464d2a9747ac1564ef4e7, type: 3}
+  SpawnedExplosion: {fileID: 0}
   dx: 000000000100000000000000ffffffff0100000001000000ffffffffffffffff
   dz: 0100000000000000ffffffff0000000001000000ffffffff01000000ffffffff
   hudDamageText: {fileID: 7190188332786271390, guid: 98e63fa1e16494c49bf426fbaa07f940, type: 3}
@@ -655,6 +655,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8896098201878414474}
     m_Modifications:
+    - target: {fileID: 192029009161927282, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192029009161927282, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1534790132965048920, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358162499245025899, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4743344397897498309, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -739,6 +755,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5436368775708771982, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436368775708771982, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6467035620936475131, guid: 4e67bcaf6476bae4cafda881a41f0404, type: 3}
       propertyPath: m_Name
       value: Canvas
